@@ -6,7 +6,6 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     trendings = giphy.get_trending_images()
-    
     return render_template('index.html',trendings=trendings)
     
 @app.route('/search',methods=["POST"])

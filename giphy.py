@@ -31,7 +31,7 @@ def get_trending_images():
         'string' : 'json'
     }
     res = requests.get(base_url,headers=headers)
-    return [(data.get('images').get('original').get('url'), data.get('slug')) for data in res.json().get('data')]
+    return [(data.get('images').get('original').get('url'), "-".join(data.get('slug').split('-')[:-1]), data.get('title')) for data in res.json().get('data')]
 
 if __name__ == "__main__":
     query = input()  
