@@ -24,40 +24,16 @@
             </div>
             <div class="col-2"></div>
         </div>
-        <div class="row d-flex justify-content-center">
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
-        </div>
-        <div class="row d-flex justify-content-center">
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
-        </div>
-        <div class="row d-flex justify-content-center">
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
-        </div>
-        <div class="row d-flex justify-content-center">
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
-        </div>
-        <div class="row d-flex justify-content-center">
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
-            <div class="col-2 border border-primary py-5 mx-1 bg-light"></div>
+        
+        <div class="row">
+            {% for trending in trendings %}
+                <div class="card col-3 border border-dark" style="width: 18rem;">
+                  <img class="card-img-top" src={{trending[0]}} alt="Card image cap">
+                  <div class="card-body border border-dark">
+                    <p class="card-text">{{trending[1]}}</p>
+                  </div>
+                </div>  
+            {% endfor %}
         </div>
     </div>
 </body>

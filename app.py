@@ -5,7 +5,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    trendings = giphy.get_trending_images()
+    
+    return render_template('index.html',trendings=trendings)
     
 @app.route('/search',methods=["POST"])
 def search():
@@ -14,4 +16,4 @@ def search():
     search_url = giphy.make_url(query)
     parsed_dic = giphy.request_and_parse(search_url)
     images = giphy.get_images(parsed_dic)
-    return render_template('search.html',images=images,query=query)
+    return render_template('search.html',query=query,images=images)
