@@ -16,3 +16,7 @@ def search():
     parsed_dic = giphy.request_and_parse(search_url)
     images = giphy.get_images(parsed_dic)
     return render_template('search.html',query=query,images=images)
+    
+@app.route('/block')
+def block():
+    return render_template('block.html')

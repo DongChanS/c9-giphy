@@ -1,41 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Giphy에 오신것을 환영합니다</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-</head>
-<body class="bg-dark">
-    <div class="container">
-        <div class="d-flex justify-content-center">
-            <h1 class="font-weight-bold text-light">Giphy에 오신것을 환영합니다</h1>
-        </div>
-        <div class="row">
-            <div class="col-2"></div>
-            <div class="col-8">
-                <form action="/search" method="POST">
-                  <div class="form-group d-flex justify-content-center">
-                    <input name="query" type="text" class="form-control mt-2 d-inline" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Query">
-                    <button type="submit" class="btn btn-primary d-inline">Submit</button>
-                  </div>
-                </form>
-            </div>
-            <div class="col-2"></div>
-        </div>
+{% extends 'layout.html' %}
+
+{% block title %}
+Giphy에 오신 것을 환영합니다.
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    {% for trending in trendings %}
+        <div class="card col-3 border border-dark" style="width: 18rem;">
+          <img class="card-img-top" src={{trending[0]}} alt="Card image cap">
+          <div class="card-body border border-dark">
+            <h5 class="card-title">{{trending[2]}}</h5>
+            <p class="card-text">{{trending[1]}}</p>
+          </div>
+        </div>  
+    {% endfor %}
+</div>
+{% endblock %}
+
+
         
-        <div class="row">
-            {% for trending in trendings %}
-                <div class="card col-3 border border-dark" style="width: 18rem;">
-                  <img class="card-img-top" src={{trending[0]}} alt="Card image cap">
-                  <div class="card-body border border-dark">
-                    <h5 class="card-title">{{trending[2]}}</h5>
-                    <p class="card-text">{{trending[1]}}</p>
-                  </div>
-                </div>  
-            {% endfor %}
-        </div>
-    </div>
-</body>
-</html>
